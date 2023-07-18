@@ -10,7 +10,13 @@ class Account {
         this.transactionHistory.push({date: currentDate, type: "deposit", amount: amount, runningbalance: this.balance })
 
     }
-    
+
+    withdrawal(amount) {
+        this.balance -= amount;
+        const currentDate = this.getCurrentDate();
+        this.transactionHistory.push({date: currentDate, type: "withdrawal", amount: amount, runningbalance: this.balance})
+    }
+
 
     private
 
