@@ -6,7 +6,7 @@ describe("Account", () => {
         account.deposit(150);
         expect(account.transactionHistory.length).toEqual(1);
         expect(account.transactionHistory[0].runningbalance).toEqual(150);
-        expect(account.transactionHistory[0].date).toEqual("18/07/2023");
+        expect(account.transactionHistory[0].date).toEqual("19/07/2023");
         expect(account.balance).toEqual(150)
 
     })
@@ -14,10 +14,22 @@ describe("Account", () => {
     it("adds a deposit then makes a withdrawal", () => {
         account = new Account();
         account.deposit(150);
-        account.withdrawal(30);
+        account.withdraw(30);
         expect(account.transactionHistory.length).toEqual(2);
         expect(account.transactionHistory[1].runningbalance).toEqual(120);
-        expect(account.transactionHistory[1].date).toEqual("18/07/2023");
+        expect(account.transactionHistory[1].date).toEqual("19/07/2023");
         expect(account.balance).toEqual(120);
+    })
+
+    it("throws an error if a withdrawal is attempted that is more than the balance", () => {
+        account = new Account();
+        account.deposit(150);
+        try {
+            account.withdraw(230);
+        } catch (error) {
+            expect(error.message).toBe("This amount exceeds your current balance of: 150");
+        }
+        
+
     })
 })

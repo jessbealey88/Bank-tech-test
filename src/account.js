@@ -11,7 +11,10 @@ class Account {
 
     }
 
-    withdrawal(amount) {
+    withdraw(amount) {
+        if(amount > this.balance) {
+            throw new Error (`This amount exceeds your current balance of: ${this.balance}`)
+        }
         this.balance -= amount;
         const currentDate = this.getCurrentDate();
         this.transactionHistory.push({date: currentDate, type: "withdrawal", amount: amount, runningbalance: this.balance})
