@@ -80,7 +80,7 @@
 
  ## 5. Examples of Unit tests
  ```javascript
- account = new account = new Account();
+ account = new Account();
  account.deposit(150);
  account.withdraw(30);
  expect(account.transactionHistory.length).toEqual(2)
