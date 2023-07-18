@@ -51,19 +51,48 @@
 
 
  class Statement {
-    constructor(transactionHistory){
-        this.transactions = transactionHistory;
+    constructor(){
+       
 
     }
 
     print {
-        //prints the banks statement using this.transactions
+        //prints the bank statement using this.transactions
     
     }
     
  }
  
  ```
+
+ ## 4. Examples of integration tests
+
+ ```javascript
+
+ account = new Account();
+ account.deposit(150);
+ account.withdraw(30);
+ expect(account.printStatement()).toEqual(
+    //Correctly printed statement
+ )
+
+ ```
+
+ ## 5. Examples of Unit tests
+ ```javascript
+ account = new account = new Account();
+ account.deposit(150);
+ account.withdraw(30);
+ expect(account.transactionHistory.length).toEqual(2)
+
+ statement = new Statement();
+ transactions = [{date: "15/07/2023", credit: 150, debit: null, balance: 150},{date: "18/07/2023", credit: null, debit: 30, balance: 120}];
+ expect(statement.print(transactions)).toEqual(
+    //Correctly printed statement
+ )
+ ```
+
+
  
 
 
