@@ -20,6 +20,11 @@ describe("Statement", () => {
         expect(statement.print(transactions)).toEqual(`date || credit || debit || balance\n19/07/2023 ||  || 30.00 || 120.00\n19/07/2023 || 150.00 ||  || 150.00`)
 
     })
+    it("prints a statement correctly when amount has 2 decimal places", () => {
+        statement = new Statement();
+        transactions = [{date: "19/07/2023", type: "deposit", amount: 150.75, runningBalance: 150.75},{date: "19/07/2023", type: "withdrawal", amount: 30.75, runningBalance: 120.00}]
+        expect(statement.print(transactions)).toEqual(`date || credit || debit || balance\n19/07/2023 ||  || 30.75 || 120.00\n19/07/2023 || 150.75 ||  || 150.75`)
 
+    })
 
 })
