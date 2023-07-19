@@ -1,3 +1,5 @@
+const Statement = require("./statement");
+
 class Account {
     constructor() {
         this.balance = 0;
@@ -19,7 +21,12 @@ class Account {
         const currentDate = this.getCurrentDate();
         this.transactionHistory.push({date: currentDate, type: "withdrawal", amount: amount, runningBalance: this.balance})
     }
-    
+
+    printStatement() {
+        let statement = new Statement();
+        return statement.print(this.transactionHistory);
+    }
+
 
     private
 

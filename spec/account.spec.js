@@ -10,7 +10,7 @@ beforeEach(() => {
     let yyyy = today.getFullYear();
     today = dd + "/" + mm + "/" + yyyy;
      
-})
+});
 
 describe("Account", () => {
     it("creates a new deposit", () => {
