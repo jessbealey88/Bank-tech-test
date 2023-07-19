@@ -86,7 +86,7 @@
  expect(account.transactionHistory.length).toEqual(2)
 
  statement = new Statement();
- transactions = [{date: "15/07/2023", credit: 150, debit: null, balance: 150},{date: "18/07/2023", credit: null, debit: 30, balance: 120}];
+ transactions = [{date: "15/07/2023", credit: 150, balance: 150},{date: "18/07/2023", debit: 30, balance: 120}];
  expect(statement.print(transactions)).toEqual(
     //Correctly printed statement
  )

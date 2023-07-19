@@ -7,7 +7,7 @@ class Account {
     deposit(amount) {
         this.balance += amount;
         const currentDate = this.getCurrentDate(); 
-        this.transactionHistory.push({date: currentDate, type: "deposit", amount: amount, runningbalance: this.balance })
+        this.transactionHistory.push({date: currentDate, type: "deposit", amount: amount, runningBalance: this.balance })
 
     }
 
@@ -17,7 +17,7 @@ class Account {
         }
         this.balance -= amount;
         const currentDate = this.getCurrentDate();
-        this.transactionHistory.push({date: currentDate, type: "withdrawal", amount: amount, runningbalance: this.balance})
+        this.transactionHistory.push({date: currentDate, type: "withdrawal", amount: amount, runningBalance: this.balance})
     }
 
 
