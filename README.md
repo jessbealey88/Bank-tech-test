@@ -1,4 +1,4 @@
-#Bank tech test
+# Bank tech test
 
 ## Description
 A banking application that allows users to interact with their account to: make deposits, make withdrawals, and see a bank statement with a list of their previous transactions using the Node REPL.
