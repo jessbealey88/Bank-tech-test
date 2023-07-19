@@ -8,12 +8,14 @@ A banking application that allows users to interact with their account to: make 
 - Use the command $npm install
 
 ## To Use the program
-- cd src
-- node
-- .load ./account.js
-- const account = new Account()
-- Make some transactions eg. account.withdraw(300) or account.deposit(600)
-- See your statement by calling account.printStatement()
+- `cd src`
+- `node`
+- `.load ./account.js`
+- Create a new instance of Account `const account = new Account()`
+- Make some transactions eg. `account.withdraw(300)` or `account.deposit(600)`
+- See your statement by calling `account.printStatement()`
+![](./bank-tech-usage.png)
+
 
 ## To run the tests
 - npm test 
