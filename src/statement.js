@@ -6,10 +6,12 @@ class Statement {
 
     print(transactions) {
         transactions.reverse().forEach(transaction => {
+            let amount = transaction.amount.toFixed(2);
+            let balance = transaction.runningBalance.toFixed(2);
             if(transaction.type === "deposit"){
-            this.statementContent += `\n${transaction.date} || ${transaction.amount} ||  || ${transaction.runningBalance}`;
+            this.statementContent += `\n${transaction.date} || ${amount} ||  || ${balance}`;
             }else if(transaction.type === "withdrawal") {
-            this.statementContent += `\n${transaction.date} ||  || ${transaction.amount} || ${transaction.runningBalance}`;
+            this.statementContent += `\n${transaction.date} ||  || ${amount} || ${balance}`;
             }
         })
         return this.statementContent;
