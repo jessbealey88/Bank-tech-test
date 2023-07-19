@@ -5,13 +5,14 @@ class Statement {
     }
 
     print(transactions) {
-        transactions.forEach(transaction => {
+        transactions.reverse().forEach(transaction => {
             if(transaction.type === "deposit"){
             this.statementContent += `\n${transaction.date} || ${transaction.amount} ||  || ${transaction.runningBalance}`;
+            }else if(transaction.type === "withdrawal") {
+            this.statementContent += `\n${transaction.date} ||  || ${transaction.amount} || ${transaction.runningBalance}`;
             }
         })
         return this.statementContent;
-
 
     }
 
