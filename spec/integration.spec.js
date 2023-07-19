@@ -1,5 +1,5 @@
 const Account = require("../src/account");
-const Statement = require("../src/statement");
+//const Statement = require("../src/statement");
 
 
 let today;
@@ -20,7 +20,20 @@ describe("Statement", () => {
         account.withdraw(30);
         account.deposit(70);
 
-        expect(account.printStatement()).toEqual(`date || credit || debit || balance\n19/07/2023 || 70.00 ||  || 190.00\n19/07/2023 ||  || 30.00 || 120.00\n19/07/2023 || 150.00 ||  || 150.00`);
+        const consoleSpy = jest.spyOn(console, 'log');
+
+        // Call the printStatement() method
+        account.printStatement();
+
+        // Assert that console.log() was called with the expected output
+        expect(consoleSpy).toHaveBeenCalledWith(
+          'date || credit || debit || balance\n19/07/2023 || 70.00 ||  || 190.00\n19/07/2023 ||  || 30.00 || 120.00\n19/07/2023 || 150.00 ||  || 150.00'
+        );
+
+        // Restore the original console.log() function
+        consoleSpy.mockRestore();
+
+        //expect(account.printStatement()).toEqual(`date || credit || debit || balance\n19/07/2023 || 70.00 ||  || 190.00\n19/07/2023 ||  || 30.00 || 120.00\n19/07/2023 || 150.00 ||  || 150.00`);
 
     })
 })

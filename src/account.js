@@ -24,7 +24,7 @@ class Account {
 
     printStatement() {
         let statement = new Statement();
-        return statement.print(this.transactionHistory);
+        console.log(statement.print(this.transactionHistory));
     }
 
 
