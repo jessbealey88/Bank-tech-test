@@ -7,7 +7,7 @@ describe("Account", () => {
         expect(account.transactionHistory.length).toEqual(1);
         expect(account.transactionHistory[0].runningbalance).toEqual(150);
         expect(account.transactionHistory[0].date).toEqual("19/07/2023");
-        expect(account.balance).toEqual(150)
+        expect(account.balance).toEqual(150);
 
     })
 
@@ -28,8 +28,6 @@ describe("Account", () => {
             account.withdraw(230);
         } catch (error) {
             expect(error.message).toBe("This amount exceeds your current balance of: 150");
-        }
-        
-
+        } 
     })
 })
