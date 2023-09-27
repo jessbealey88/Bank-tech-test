@@ -27,7 +27,7 @@ describe("Statement", () => {
 
         // Assert that console.log() was called with the expected output
         expect(consoleSpy).toHaveBeenCalledWith(
-          'date || credit || debit || balance\n19/07/2023 || 70.00 ||  || 190.00\n19/07/2023 ||  || 30.00 || 120.00\n19/07/2023 || 150.00 ||  || 150.00'
+          `date || credit || debit || balance\n${today} || 70.00 ||  || 190.00\n${today} ||  || 30.00 || 120.00\n${today} || 150.00 ||  || 150.00`
         );
 
         // Restore the original console.log() function
